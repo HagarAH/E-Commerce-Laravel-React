@@ -1,15 +1,21 @@
 import './index.css'
-import {Navigate, Outlet} from "react-router-dom";
+import { Outlet} from "react-router-dom";
 import {useStateContext} from "../../contexts/AuthProvider";
+import Sidebar from "../../views/Sidebar";
 
 export default function Default(){
 
-    const {user,token}=useStateContext();
-    if(!token){
-        return <Navigate to="/login"/>
-    }
-        return (
+    const {token}=useStateContext();
+    // if(!token){
+    //     return <Navigate to="/login"/>
+    // }
+
+    return (
         <>
+            <div>
+
+                <Sidebar token={token}/>
+            </div>
             <Outlet/>
 
         </>
