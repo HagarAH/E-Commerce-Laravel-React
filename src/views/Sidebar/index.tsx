@@ -12,7 +12,7 @@ export default function Sidebar({ token }) {
 
     return (
         <>
-            <div className={`d-flex justify-content-between ${mobile ? 'mobile-show' : 'nav-bar'}`}>
+            <div className={`d-flex justify-content-between border-bottom ${mobile ? 'mobile-show' : 'nav-bar'}`}>
                 {mobile ? (
                     <div>
                         <div className="d-flex justify-content-end mx-4 my-2"  onClick={() => setMobile(false)}>

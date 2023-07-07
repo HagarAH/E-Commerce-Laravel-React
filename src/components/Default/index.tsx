@@ -13,7 +13,6 @@ export default function Default(){
     return (
         <>
             <div>
-
                 <Sidebar token={token}/>
             </div>
             <Outlet/>

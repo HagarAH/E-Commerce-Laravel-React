@@ -4,7 +4,7 @@ import Signup from "./views/Signup";
 import NotFound from "./views/NotFound";
 import Guest from "./components/Guest";
 import Default from "./components/Default";
-import Dashboard from "./views/Users/Dashboard";
+import Hero from "./views/Hero";
 
 const router = createBrowserRouter([
 
@@ -15,11 +15,11 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Navigate to='/dashboard'/>
+                element: <Navigate to='/hero'/>
             },
             {
-                path: '/dashboard',
-                element: <Dashboard/>
+                path: '/hero',
+                element: <Hero/>
             }
         ]
     }, {
