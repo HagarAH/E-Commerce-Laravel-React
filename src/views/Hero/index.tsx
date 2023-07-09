@@ -25,7 +25,7 @@ export default function Hero() {
                                      style={{background: '#486284', color: "white"}} to='/burgers'>
                                 Order Now
                             </NavLink>
-                            <NavLink className="button-style my-2 d-flex justify-content-center" to='/login'>
+                            <NavLink className="button-style my-2 d-flex justify-content-center" to='/burgers'>
                                 Explore
                             </NavLink>
                         </div>
