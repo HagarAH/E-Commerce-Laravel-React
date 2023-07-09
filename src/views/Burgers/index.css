@@ -1,3 +1,28 @@
 .burgers-div{
-    padding: 120px 112px
+    padding: 65px 112px;
+    display:flex;
+    flex-direction: column;
+    gap: 64px;
+}
+.burgers-p{
+    font-size: 20px;
+    font-family: 'DMSans';
+    width: 789px;
+    line-height: 32px;
+    letter-spacing: 0.5px;
+    color: #8CA2C0;
+}
+.h1-text{
+    font-family: 'DMSans bold';
+    color:#486284;
+}
+.text-div{
+    display:flex;
+    flex-direction: column;
+    gap:16px
+}
+.img-div{
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
 }
