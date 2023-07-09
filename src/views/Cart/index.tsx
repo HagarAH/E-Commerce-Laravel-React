@@ -1,5 +1,7 @@
 import './index.css'
 import burgers from '../../assets/images/burgerExp.png';
+import {faTrashCan} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default function Cart() {
     return (
@@ -12,49 +14,40 @@ export default function Cart() {
                     <div className='orders-display'>
                         <div className='order-item'>
                             <img src={burgers}/>
-                            <div>
+                            <div className='text-cart'>
                                 <h2> Burger 1</h2>
-                                <p> Welcome to Burger Bliss, where we take your cravings to a whole new level!
+                                <p className='p-cart'> Welcome to Burger Bliss, where we take your cravings to a whole new level!
                                     Our mouthwatering burgers are made from 100% beef and are served on freshly baked
                                     buns.</p>
-                                <div className=''>
-                                    <span>Amount:</span> <input type="number" min="0" max="10" step="1" value="0"/>
+                                <div className='amount-div'>
+                                    <span className=' p-2 '>Amount:</span> <input type="number" min="0" max="10" step="1" value="0"/> <FontAwesomeIcon style={{
+                                        paddingLeft:'8px'
+                                }} color={'red'} icon={faTrashCan}/>
                                 </div>
 
                             </div>
                         </div>
+
                         <div className='order-item'>
                             <img src={burgers}/>
-                            <div>
+                            <div className='text-cart'>
                                 <h2> Burger 1</h2>
-                                <p> Welcome to Burger Bliss, where we take your cravings to a whole new level!
+                                <p className='p-cart'> Welcome to Burger Bliss, where we take your cravings to a whole new level!
                                     Our mouthwatering burgers are made from 100% beef and are served on freshly baked
                                     buns.</p>
-                                <div className=''>
-                                    <span>Amount:</span> <input type="number" min="0" max="10" step="1" value="0"/>
+                                <div className='amount-div'>
+                                    <span className=' p-2 '>Amount:</span> <input type="number" min="0" max="10" step="1" value="0"/> <FontAwesomeIcon style={{
+                                        paddingLeft:'8px'
+                                }} color={'red'} icon={faTrashCan}/>
                                 </div>
 
                             </div>
                         </div>
-                        <div className='order-item'>
-                            <img src={burgers}/>
-                            <div>
-                                <h2> Burger 1</h2>
-                                <p> Welcome to Burger Bliss, where we take your cravings to a whole new level!
-                                    Our mouthwatering burgers are made from 100% beef and are served on freshly baked
-                                    buns.</p>
-                                <div className=''>
-                                    <span>Amount:</span> <input type="number" min="0" max="10" step="1" value="0"/>
-                                </div>
-
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
             <div className='order-deets'>
-                <h2>Order details</h2>
+                <span>Order details</span>
             </div>
         </>
     )
