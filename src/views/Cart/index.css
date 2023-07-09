@@ -1,0 +1,7 @@
+.cart-div{
+    padding: 65px 112px;
+    display:flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
