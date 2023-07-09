@@ -1,8 +1,50 @@
-.cart-div{
-    padding: 65px 112px;
-    display:flex;
+.cart-div {
+    padding: 10px 112px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    height: 80%;
+}
+
+.h1-text {
+    color: #486284;
+    font-size: 60px;
+    line-height: 76px;
+    border-bottom: solid 1px #486284;
+}
+
+.inner-div {
+    display: flex;
     flex-direction: column;
     gap: 64px;
 }
 
+.orders-display {
+    height: 80%;
+    overflow-y: auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 72px;
+}
 
+.order-item {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.order-deets {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 16px;
+    border-top: solid 1px #486284;
+}
+
+.order-deets h2 {
+    font-size: 24px;
+    color: #486284;
+}
