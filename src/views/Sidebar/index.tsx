@@ -31,7 +31,7 @@ export default function Sidebar({ token }) {
                                         <NavLink className="button-style my-2 d-flex justify-content-center" onClick={() => setMobile(false)} to='/login'>
                                             Careers
                                         </NavLink>
-                                        <NavLink className="button-style my-2 d-flex justify-content-center" style={{ background: '#486284', color: "white" }} onClick={() => setMobile(false)} to='/signup'>
+                                        <NavLink className="button-style my-2 d-flex justify-content-center" style={{ background: '#486284', color: "white" }} onClick={() => setMobile(false)} to='/order'>
                                             Order
                                         </NavLink>
                                     </>
@@ -56,8 +56,8 @@ export default function Sidebar({ token }) {
                 ) : (
                     <>
                         <nav className="flex-md flex-row font-nav">
-                            <NavLink to={'/home'} className="nav-link">Home</NavLink>
-                            <NavLink to={'/home'} className="nav-link">Burgers</NavLink>
+                            <NavLink to={'/'} className="nav-link">Home</NavLink>
+                            <NavLink to={'/burgers'} className="nav-link">Burgers</NavLink>
                             <NavLink to={'/home'} className="nav-link">Contact</NavLink>
                         </nav>
 
@@ -71,7 +71,7 @@ export default function Sidebar({ token }) {
                                         <NavLink className="button-style" onClick={() => setMobile(false)} to='/login'>
                                             Careers
                                         </NavLink>
-                                        <NavLink className="button-style" style={{ background: '#486284', color: "white" }} onClick={() => setMobile(false)} to='/burgers'>
+                                        <NavLink className="button-style" style={{ background: '#486284', color: "white" }} onClick={() => setMobile(false)} to='/order'>
                                             Order
                                         </NavLink>
                                     </>

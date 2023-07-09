@@ -6,6 +6,7 @@ import Guest from "./components/Guest";
 import Default from "./components/Default";
 import Hero from "./views/Hero";
 import Burgers from "./views/Burgers";
+import Order from "./views/Order";
 
 const router = createBrowserRouter([
 
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/order',
-                element: <Burgers/>
+                element: <Order/>
             }
         ]
     }, {
