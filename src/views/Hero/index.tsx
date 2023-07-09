@@ -22,7 +22,7 @@ export default function Hero() {
                         </p>
                         <div className='hero-buttons'>
                             <NavLink className="button-style my-2 d-flex justify-content-center"
-                                     style={{background: '#486284', color: "white"}} to='/signup'>
+                                     style={{background: '#486284', color: "white"}} to='/burgers'>
                                 Order Now
                             </NavLink>
                             <NavLink className="button-style my-2 d-flex justify-content-center" to='/login'>

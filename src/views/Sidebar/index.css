@@ -2,24 +2,19 @@
     font-family: 'DMSans', sans-serif;
     font-size: 16px;
     gap: 48px;
-    padding-left: 48px;
-    padding-right: 48px;
+    padding: 9px 48px;
     letter-spacing: 0.5px;
     line-height: 24px;
     color: #486284;
     text-decoration: none;
-    padding-top: 9px;
-    padding-bottom: 9px;
 }
-.flex-sm{
+
+.flex-sm {
     display: flex;
 }
 
 .nav-bar {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 48px;
-    padding-right: 48px;
+    padding: 12px 48px;
     border-radius: inherit;
 }
 
@@ -30,14 +25,14 @@
 
 .buttons-container {
     gap: 22px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
 }
 
 .bars {
     display: none;
 }
-.flex-md{
+
+.flex-md {
     display: flex;
 }
 
@@ -46,10 +41,7 @@
     font-family: 'DMSans', sans-serif;
     font-size: 16px;
     gap: 10px;
-    padding-top: 9px;
-    padding-bottom: 9px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 9px 20px;
     letter-spacing: 0.5px;
     line-height: 24px;
     color: #486284;
@@ -58,22 +50,22 @@
     background: transparent;
 }
 
-.mobile-show{
-   display: none;
+.mobile-show {
+    display: none;
 }
-
 
 @media screen and (max-width: 860px) {
     .bars {
         display: block;
         font-size: 20px;
-        padding-top: 3px;
-        padding-bottom: 3px;
+        padding: 3px 0;
     }
-    .flex-md{
+
+    .flex-md {
         display: none;
     }
-    .mobile-show{
+
+    .mobile-show {
         background: #ADBDD2;
         height: 100%;
         width: 100%;
@@ -82,31 +74,19 @@
         z-index: 100000;
     }
 
-
     .nav-bar {
         display: none;
     }
+
     .font-nav {
         font-size: 26px;
         gap: 78px;
-        padding-left: 78px;
-        padding-right: 78px;
-        letter-spacing: 0.5px;
-        line-height: 24px;
-        color: #486284;
-        text-decoration: none;
-        padding-top: 9px;
-        padding-bottom: 9px;
+        padding: 9px 78px;
     }
-
-
 }
 
-
 @media screen and (max-width: 521px) {
-
-    .flex-sm{
+    .flex-sm {
         display: none;
     }
-
 }

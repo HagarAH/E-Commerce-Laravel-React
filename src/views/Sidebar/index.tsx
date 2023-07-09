@@ -71,7 +71,7 @@ export default function Sidebar({ token }) {
                                         <NavLink className="button-style" onClick={() => setMobile(false)} to='/login'>
                                             Careers
                                         </NavLink>
-                                        <NavLink className="button-style" style={{ background: '#486284', color: "white" }} onClick={() => setMobile(false)} to='/signup'>
+                                        <NavLink className="button-style" style={{ background: '#486284', color: "white" }} onClick={() => setMobile(false)} to='/burgers'>
                                             Order
                                         </NavLink>
                                     </>

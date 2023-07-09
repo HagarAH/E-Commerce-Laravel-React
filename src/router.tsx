@@ -5,6 +5,7 @@ import NotFound from "./views/NotFound";
 import Guest from "./components/Guest";
 import Default from "./components/Default";
 import Hero from "./views/Hero";
+import Burgers from "./views/Burgers";
 
 const router = createBrowserRouter([
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             {
                 path: '/hero',
                 element: <Hero/>
+            },
+            {
+                path: '/burgers',
+                element: <Burgers/>
             }
         ]
     }, {
