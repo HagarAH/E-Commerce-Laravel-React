@@ -22,9 +22,9 @@ export default function Sidebar({ token }) {
 
 
                         <nav className="d-flex flex-column align-content-center  my-5 font-nav">
-                            <NavLink to={'/home'} onClick={() => setMobile(false)} className="nav-link">Home</NavLink>
-                            <NavLink to={'/home'} onClick={() => setMobile(false)} className="nav-link">Burgers</NavLink>
-                            <NavLink to={'/home'} onClick={() => setMobile(false)} className="nav-link">Contact</NavLink>
+                            <NavLink to={'/'} onClick={() => setMobile(false)} className="nav-link">Home</NavLink>
+                            <NavLink to={'/burgers'} onClick={() => setMobile(false)} className="nav-link">Burgers</NavLink>
+                            <NavLink to={'/cart'} onClick={() => setMobile(false)} className="nav-link">Contact</NavLink>
                             <div className="d-flex flex-column justify-content-center">
                                 {token ? (
                                     <>
@@ -58,7 +58,7 @@ export default function Sidebar({ token }) {
                         <nav className="flex-md flex-row font-nav">
                             <NavLink to={'/'} className="nav-link">Home</NavLink>
                             <NavLink to={'/burgers'} className="nav-link">Burgers</NavLink>
-                            <NavLink to={'/home'} className="nav-link">Contact</NavLink>
+                            <NavLink to={'/cart'} className="nav-link">Contact</NavLink>
                         </nav>
 
                         <Link to="/">

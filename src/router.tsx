@@ -7,6 +7,7 @@ import Default from "./components/Default";
 import Hero from "./views/Hero";
 import Burgers from "./views/Burgers";
 import Order from "./views/Order";
+import Cart from "./views/Cart";
 
 const router = createBrowserRouter([
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: '/order',
                 element: <Order/>
+            },
+            {
+                path: '/cart',
+                element: <Cart/>
             }
         ]
     }, {
