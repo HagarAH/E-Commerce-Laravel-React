@@ -5,3 +5,15 @@
     align-items: center;
     padding: 12px;
 }
+.bg-div{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 85vh;
+    margin-top:1vh;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
+}

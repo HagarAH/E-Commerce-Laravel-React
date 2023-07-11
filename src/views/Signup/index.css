@@ -1,1 +1,79 @@
-r
+.signup-div {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 20px 40px;
+    border-radius: 10%;
+}
+
+
+.h1-txt {
+    font-size: 30px;
+    font-family: 'DMSans bold';
+    line-height: 76px;
+    letter-spacing: 0.5px;
+    padding: 20px 20px;
+    text-align: left;
+    color: #486284;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+form input {
+    font-family: 'DMSans', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    color: #486284;
+    text-decoration: none;
+    margin-left: -15px;
+    margin-right: 5px;
+    padding-left: 20px;
+    padding-right: 40px;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #486284;
+    background: transparent;
+}
+
+form label {
+    font-size: 16px;
+    color: #8CA2C0;
+    padding: 5px 0;
+}
+.a-css{
+    text-decoration: none;
+    font-size: 16px;
+    color: #486284;
+    font-family: 'DMSans', sans-serif;
+    padding: 5px 0;
+}
+.button-style {
+
+    border-radius: 50px;
+    font-family: 'DMSans', sans-serif;
+    font-size: 12px;
+    padding: 0px;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    color: #486284;
+    text-decoration: none;
+    border: 1px solid #486284;
+    background: transparent;
+}
+.buttons-div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

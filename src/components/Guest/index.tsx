@@ -1,7 +1,8 @@
 import './index.css'
-import {Navigate, Outlet} from "react-router-dom";
+import {Navigate, NavLink, Outlet} from "react-router-dom";
 import {useStateContext} from "../../contexts/AuthProvider";
-import burgers from '../../assets/images/Group.png'
+import burgers from '../../assets/images/Group.png';
+import bgImage from '../../assets/images/stacked-peaks-haikei.svg';
 export default function Guest(){
     const {token}=useStateContext();
     if(token){
@@ -10,9 +11,13 @@ export default function Guest(){
         return (
         <>
             <div className='icon-div'>
-                <img src={burgers}/>
+                <NavLink to='/'>  <img src={burgers}/></NavLink>
+
             </div>
-            <Outlet/>
+            <div className='bg-div' style={{ backgroundImage: `url(${bgImage})`}}>
+                <Outlet/>
+            </div>
+
 
         </>
 )
