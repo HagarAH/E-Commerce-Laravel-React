@@ -21,10 +21,13 @@ export default function Sidebar() {
     }
 
        useEffect(() => {
-           axiosClient.get('/user')
-               .then(({data}) => {
-                   setUser(data);
-               })
+           if(token){
+               axiosClient.get('/user')
+                   .then(({data}) => {
+                       setUser(data);
+                   })
+           }
+
        }, [])
 
 
