@@ -25,10 +25,11 @@ const passwordValidation = (password:string) => {
 
 export default function Signup() {
     const [email, setEmail] = useState<string>('');
+    const [name, setName] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [passwordConfirm, setPasswordConfirm] = useState<string>('');
     const [err, setError] = useState('');
-    const { user, setUser, token, setToken } = useStateContext();
+    const { setUser,  setToken } = useStateContext();
 
 
     // @ts-ignore
@@ -51,12 +52,13 @@ export default function Signup() {
             email,
             password,
             password_confirm: passwordConfirm,
+            name
         };
         console.log(payload);
         axiosClient.post('/signup', payload).then(({data}) => {
 
             setUser(data.user);
-            setToken(data.token);
+            setToken(null);
             console.log(data.token);
 
         })
@@ -82,7 +84,14 @@ export default function Signup() {
             <h1 className='h1-txt animate__animated animate__swing animate__delay-1s'>Register</h1>
             {err && <p style={{color: 'red'}}>{err}</p>}
             <form onSubmit={onSubmit}>
-                <label>Email</label>
+                <label>Full Name</label>
+                <span>
+                    <FontAwesomeIcon color={'#486284'} icon={faUser}/>
+                    <input type='name' placeholder='Enter your full name' value={email} onChange={(e) => {
+                        setName(e.target.value);
+                        setError('')
+                    }}/>
+                </span><label>Email</label>
                 <span>
                     <FontAwesomeIcon color={'#486284'} icon={faUser}/>
                     <input type='email' placeholder='Enter your email' value={email} onChange={(e) => {

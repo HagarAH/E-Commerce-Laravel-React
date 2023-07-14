@@ -8,10 +8,8 @@ import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import {useStateContext} from "../../contexts/AuthProvider";
 import axiosClient from "../../axios-client";
 
-// @ts-ignore
-export default function Sidebar(props) {
+export default function Sidebar() {
     const [mobile, setMobile] = useState(false);
-    const [selectedValue, setSelectedValue] = useState('');
     const {setUser, user,setToken, token} = useStateContext();
     const onLogout = (ev) => {
         ev.preventDefault();
