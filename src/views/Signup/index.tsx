@@ -87,7 +87,7 @@ export default function Signup() {
                 <label>Full Name</label>
                 <span>
                     <FontAwesomeIcon color={'#486284'} icon={faUser}/>
-                    <input type='name' placeholder='Enter your full name' value={email} onChange={(e) => {
+                    <input type='name' placeholder='Enter your full name' value={name} onChange={(e) => {
                         setName(e.target.value);
                         setError('')
                     }}/>
