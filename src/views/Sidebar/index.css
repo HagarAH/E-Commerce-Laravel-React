@@ -49,9 +49,27 @@
     border: 1px solid #486284;
     background: transparent;
     text-align: center;
-
-
 }
+
+.btn.btn-secondary.dropdown-toggle {
+    background-color: transparent;
+    color:#486284;
+    font-size: 16px;
+    padding: 9px 20px;
+    border: none;
+}
+.btn.dropdown-toggle::after {
+    margin-left: 10px;
+}
+.btn.btn-secondary.dropdown-toggle:hover {
+    background-color: transparent;
+}
+
+nav .dropdown-item {
+    color:#486284;
+    font-size: 16px;
+}
+
 
 .mobile-show {
     display: none;

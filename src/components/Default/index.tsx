@@ -6,14 +6,15 @@ import Sidebar from "../../views/Sidebar";
 export default function Default(){
 
     const {token}=useStateContext();
+
     // if(!token){
-    //     return <Navigate to="/login"/>
+    //     return <Navigate to="/signup"/>
     // }
 
     return (
         <>
             <div>
-                <Sidebar token={token}/>
+                <Sidebar token={token} />
             </div>
             <Outlet/>
 

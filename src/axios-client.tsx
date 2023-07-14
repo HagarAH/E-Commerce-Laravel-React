@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosClient = axios.create({
-    baseURL: `${process.env.REACT_APP_API_BASE_URL}/api` // Use REACT_APP_API_BASE_URL for CRA
+    baseURL:  import.meta.env.VITE_API_BASE_URL + '/api'
 });
 
 axiosClient.interceptors.request.use((config) => {

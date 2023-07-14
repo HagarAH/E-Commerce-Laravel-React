@@ -5,9 +5,9 @@ import {faLock, faUser} from '@fortawesome/free-solid-svg-icons';
 import axiosClient from '../../axios-client';
 import './index.css';
 import 'animate.css';
+import {useStateContext} from "../../contexts/AuthProvider.tsx";
 
-// move password validation function outside of component
-const passwordValidation = (password) => {
+const passwordValidation = (password:string) => {
     if (!/(?=.*[a-z])/.test(password)) {
         return "Password must contain at least one lowercase character";
     }
@@ -24,11 +24,14 @@ const passwordValidation = (password) => {
 };
 
 export default function Signup() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [passwordConfirm, setPasswordConfirm] = useState('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [passwordConfirm, setPasswordConfirm] = useState<string>('');
     const [err, setError] = useState('');
+    const { user, setUser, token, setToken } = useStateContext();
 
+
+    // @ts-ignore
     const onSubmit = (ev) => {
         ev.preventDefault();
         if (!email) {
@@ -49,31 +52,29 @@ export default function Signup() {
             password,
             password_confirm: passwordConfirm,
         };
-        axiosClient.post('/signup', payload).then(response => ({}))
+        console.log(payload);
+        axiosClient.post('/signup', payload).then(({data}) => {
+
+            setUser(data.user);
+            setToken(data.token);
+            console.log(data.token);
+
+        })
             .catch(error => {
-                if(error.response)
-        {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            console.log(error.response.data);
-            console.log(error.response.status);
-            console.log(error.response.headers);
-            setError(error.response.data.message);
+                if(error.response && error.response.status===422){
+                    setError(error.response.data.message);
+                    console.log(error)
         }
     else
         if (error.request) {
-            // The request was made but no response was received
-            // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-            // http.ClientRequest in Node.js
             console.log(error.request);
         } else {
             // Something happened in setting up the request that triggered an Error
             console.log('Error', error.message);
         }
-        console.log(error.config);
 
     });
-        setError(null);
+        setError('');
     };
 
     return (

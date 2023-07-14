@@ -9,7 +9,6 @@ const StateContext = createContext({
     }
 })
 
-// @ts-ignore
 export const AuthProvider = ({children}) => {
     const [user, setUser] = useState({});
     const [token, _setToken] = useState(localStorage.getItem('ACCESS_TOKEN'));
@@ -28,13 +27,9 @@ export const AuthProvider = ({children}) => {
         <>
 
             <StateContext.Provider value={{
-                // @ts-ignore
                 user,
-                // @ts-ignore
-                token,
-                // @ts-ignore
                 setUser,
-                // @ts-ignore
+                token,
                 setToken
             }}>
                 {children}
@@ -42,7 +37,7 @@ export const AuthProvider = ({children}) => {
             </StateContext.Provider>
 
         </>
-    )
+    );
 
 }
 

@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+DTSTART:20230714T172500Z
+DTEND:20230714T173000Z
+DTSTAMP:20230714T153408Z
+ORGANIZER;CN=stajups@gmail.com:mailto:stajups@gmail.com
+UID:m2vf41stl7f4bek964rpscr32c@google.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=hagarhamad02@gmail.com;X-NUM-GUESTS=0:mailto:hagarhamad02@gmail.com
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE
+ ;CN=stajups@gmail.com;X-NUM-GUESTS=0:mailto:stajups@gmail.com
+X-MICROSOFT-CDO-OWNERAPPTID:-1622863957
+CREATED:20230713T102848Z
+DESCRIPTION:Ön Tanışma Görüşmeleri 5 dakika sürecek olup çevrimiçi bir şeki
+ lde yapılacaktır. İlgili zoom linki müsait olduğunuz saat ve tarihinizi seç
+ tikten sonra size iletilecektir.\n\nm_id: 42avyYMYbr
+LAST-MODIFIED:20230714T153407Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Staj-Up & Valentura Yazılım Stajı Ön Tanışma Görüşmeleri w/ Hagar H
+ amad
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
