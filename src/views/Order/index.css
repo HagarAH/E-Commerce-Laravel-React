@@ -10,12 +10,22 @@
     flex-direction: row;
     column-gap: 24px;
 }
+.modal-div{
+    font-family: 'DMSans bold';
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    color: #486284;
+    justify-content: center;
+}
 
 .text-item {
     width: 576px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 4px;
     line-height: 32px;
 
 }
