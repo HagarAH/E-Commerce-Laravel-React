@@ -1,11 +1,11 @@
 import './index.css'
 
-export default function Dashboard(){
-        return (
+export default function Dashboard() {
+    return (
         <>
-dashboard
+            dashboard
 
         </>
-)
+    )
 
 }

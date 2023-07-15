@@ -12,8 +12,10 @@ type ContextType = {
 const StateContext = createContext<ContextType>({
     user: null,
     token: null,
-    setUser: () => {},
-    setToken: () => {},
+    setUser: () => {
+    },
+    setToken: () => {
+    },
 })
 
 export const AuthProvider = ({children}) => {

@@ -4,15 +4,13 @@ import {faLock, faUser} from "@fortawesome/free-solid-svg-icons";
 import {NavLink} from "react-router-dom";
 import 'animate.css';
 import axiosClient from '../../axios-client';
-import './index.css';
-import 'animate.css';
 import {useStateContext} from "../../contexts/AuthProvider.tsx";
 import {useState} from "react";
 
 
 export default function Login() {
     const [err, setError] = useState('');
-    const { user, setUser, token, setToken } = useStateContext();
+    const {user, setUser, token, setToken} = useStateContext();
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
@@ -36,12 +34,10 @@ export default function Login() {
 
         })
             .catch(error => {
-                if(error.response && error.response.status===422){
+                if (error.response && error.response.status === 422) {
                     setError(error.response.data.message);
                     console.log(error)
-                }
-                else
-                if (error.request) {
+                } else if (error.request) {
                     console.log(error.request);
                 } else {
                     // Something happened in setting up the request that triggered an Error

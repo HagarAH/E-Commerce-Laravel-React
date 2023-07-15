@@ -7,7 +7,7 @@ import './index.css';
 import 'animate.css';
 import {useStateContext} from "../../contexts/AuthProvider.tsx";
 
-const passwordValidation = (password:string) => {
+const passwordValidation = (password: string) => {
     if (!/(?=.*[a-z])/.test(password)) {
         return "Password must contain at least one lowercase character";
     }
@@ -29,7 +29,7 @@ export default function Signup() {
     const [password, setPassword] = useState<string>('');
     const [passwordConfirm, setPasswordConfirm] = useState<string>('');
     const [err, setError] = useState('');
-    const { setUser,  setToken } = useStateContext();
+    const {setUser, setToken} = useStateContext();
 
 
     // @ts-ignore
@@ -58,24 +58,22 @@ export default function Signup() {
         axiosClient.post('/signup', payload).then(({data}) => {
 
             setUser(data.user);
-            setToken(null);
+            setToken(data.token);
             console.log(data.token);
 
         })
             .catch(error => {
-                if(error.response && error.response.status===422){
+                if (error.response && error.response.status === 422) {
                     setError(error.response.data.message);
                     console.log(error)
-        }
-    else
-        if (error.request) {
-            console.log(error.request);
-        } else {
-            // Something happened in setting up the request that triggered an Error
-            console.log('Error', error.message);
-        }
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log('Error', error.message);
+                }
 
-    });
+            });
         setError('');
     };
 

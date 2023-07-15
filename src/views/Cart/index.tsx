@@ -2,8 +2,16 @@ import './index.css'
 import burgers from '../../assets/images/burgerExp.png';
 import {faTrashCan} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {Navigate} from "react-router-dom";
+import {useStateContext} from "../../contexts/AuthProvider";
 
 export default function Cart() {
+    const {token} = useStateContext();
+
+    if (!token) {
+        return <Navigate to="/*"/>
+    }
+
     return (
         <>
             <div className='cart-div'>
@@ -16,13 +24,16 @@ export default function Cart() {
                             <img src={burgers}/>
                             <div className='text-cart'>
                                 <h2> Burger 1</h2>
-                                <p className='p-cart'> Welcome to Burger Bliss, where we take your cravings to a whole new level!
+                                <p className='p-cart'> Welcome to Burger Bliss, where we take your cravings to a whole
+                                    new level!
                                     Our mouthwatering burgers are made from 100% beef and are served on freshly baked
                                     buns.</p>
                                 <div className='amount-div'>
-                                    <span className=' p-2 '>Amount:</span> <input type="number" min="0" max="10" step="1" value="0"/> <FontAwesomeIcon style={{
-                                        paddingLeft:'8px'
-                                }} color={'red'} icon={faTrashCan}/>
+                                    <span className=' p-2 '>Amount:</span> <input type="number" min="0" max="10"
+                                                                                  step="1" value="0"/> <FontAwesomeIcon
+                                    style={{
+                                        paddingLeft: '8px'
+                                    }} color={'red'} icon={faTrashCan}/>
                                 </div>
 
                             </div>
@@ -32,13 +43,16 @@ export default function Cart() {
                             <img src={burgers}/>
                             <div className='text-cart'>
                                 <h2> Burger 1</h2>
-                                <p className='p-cart'> Welcome to Burger Bliss, where we take your cravings to a whole new level!
+                                <p className='p-cart'> Welcome to Burger Bliss, where we take your cravings to a whole
+                                    new level!
                                     Our mouthwatering burgers are made from 100% beef and are served on freshly baked
                                     buns.</p>
                                 <div className='amount-div'>
-                                    <span className=' p-2 '>Amount:</span> <input type="number" min="0" max="10" step="1" value="0"/> <FontAwesomeIcon style={{
-                                        paddingLeft:'8px'
-                                }} color={'red'} icon={faTrashCan}/>
+                                    <span className=' p-2 '>Amount:</span> <input type="number" min="0" max="10"
+                                                                                  step="1" value="0"/> <FontAwesomeIcon
+                                    style={{
+                                        paddingLeft: '8px'
+                                    }} color={'red'} icon={faTrashCan}/>
                                 </div>
 
                             </div>

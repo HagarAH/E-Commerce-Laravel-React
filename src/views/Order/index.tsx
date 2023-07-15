@@ -1,8 +1,9 @@
 import './index.css'
 import burger from '../../assets/images/burger.png'
 import {NavLink} from "react-router-dom";
-export default function Order(){
-        return (
+
+export default function Order() {
+    return (
         <>
             <div className=' order-div'>
                 <div>
@@ -39,6 +40,6 @@ export default function Order(){
             </div>
 
         </>
-)
+    )
 
 }

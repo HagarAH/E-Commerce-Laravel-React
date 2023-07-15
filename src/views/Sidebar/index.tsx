@@ -10,27 +10,32 @@ import axiosClient from "../../axios-client";
 
 export default function Sidebar() {
     const [mobile, setMobile] = useState(false);
-    const {setUser, user,setToken, token} = useStateContext();
+    const {setUser, user, setToken, token} = useStateContext();
     const onLogout = (ev) => {
         ev.preventDefault();
-        axiosClient.post('/logout').then(()=>{
+        axiosClient.post('/logout').then(() => {
             setUser({});
             setToken(null);
         })
 
     }
+    useEffect(() => {
+        if (token) {
 
-       useEffect(() => {
-           if(token){
-               axiosClient.get('/user')
-                   .then(({data}) => {
-                       setUser(data);
-                   })
-           }
-
-       }, [])
+            fetchUser();
+        }
+    }, [token]);
 
 
+    const fetchUser = async () => {
+        try {
+            const {data} = await axiosClient.get('/user');
+            setUser(data);
+        } catch (error) {
+            console.error(error);
+            // handle error here
+        }
+    };
 
     return (
         <>
@@ -55,7 +60,8 @@ export default function Sidebar() {
                                         <div className="dropdown">
                                             <a className="btn btn-secondary dropdown-toggle" href="#" role="button"
                                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                                {user.name}
+                                                {user ? <span>{user.name}</span> : <span>...</span>}
+
                                             </a>
 
                                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -97,7 +103,7 @@ export default function Sidebar() {
                         <nav className="flex-md flex-row font-nav">
                             <NavLink to={'/'} className="nav-link">Home</NavLink>
                             <NavLink to={'/burgers'} className="nav-link">Burgers</NavLink>
-                            <NavLink to={'/cart'} className="nav-link">Contact</NavLink>
+                            <NavLink to={'/'} className="nav-link">Contact</NavLink>
                         </nav>
 
                         <Link to="/">
@@ -110,14 +116,15 @@ export default function Sidebar() {
                                         <div className="dropdown">
                                             <a className="btn btn-secondary dropdown-toggle" href="#" role="button"
                                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                                {user.name}
+                                                {user ? <span>{user.name}</span> : <span>. . .</span>}
                                             </a>
 
                                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                 <li><a className="dropdown-item" href="#" onClick={onLogout}>Logout</a>
                                                 </li>
-                                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                                <li><a className="dropdown-item" href="#">Profile</a></li>
+                                                <li><NavLink to={'/cart'} className="dropdown-item">My cart</NavLink>
+                                                </li>
                                             </ul>
                                         </div>
                                         <NavLink className="button-style"

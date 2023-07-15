@@ -52,13 +52,15 @@ form label {
     color: #8CA2C0;
     padding: 5px 0;
 }
-.a-css{
+
+.a-css {
     text-decoration: none;
     font-size: 16px;
     color: #486284;
     font-family: 'DMSans', sans-serif;
     padding: 5px 0;
 }
+
 .button-style {
     border-radius: 50px;
     font-family: 'DMSans', sans-serif;
@@ -72,18 +74,21 @@ form label {
     background-size: 200% 100%;
     background-position: right;
     transition: background-position 0.3s ease-in-out, color 0.3s ease-in-out;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;}
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
 
 .button-style:hover {
     background-position: left;
     color: white;
-    background: #486284 ;
+    background: #486284;
 }
-.button-style:active{
+
+.button-style:active {
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 
 }
-.buttons-div{
+
+.buttons-div {
     display: flex;
     align-items: center;
     flex-direction: column;

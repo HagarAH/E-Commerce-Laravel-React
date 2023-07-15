@@ -5,14 +5,15 @@
     gap: 64px;
     height: 80%;
 }
-.amount-div{
+
+.amount-div {
     font-family: 'DMSans bold';
     color: #486284;
     letter-spacing: 0.5px;
     font-size: 17px;
 }
 
-.cart-div h1{
+.cart-div h1 {
     color: #486284;
     font-size: 60px;
     line-height: 76px;
@@ -69,14 +70,17 @@
         padding: 10px 12px;
         gap: 24px;
     }
+
     .order-item p {
         font-size: 16px;
         letter-spacing: 0.5px;
         color: #8CA2C0;
     }
+
     .order-item img {
         width: 300px;
     }
+
     .order-item {
         display: flex;
         flex-direction: column;
@@ -84,17 +88,18 @@
         gap: 24px;
     }
 
-    .cart-div h1{
+    .cart-div h1 {
         color: #486284;
         font-size: 40px;
         font-family: 'DMSans bold';
         line-height: 76px;
         border-bottom: solid 1px #486284;
     }
-    .cart-div h2{
+
+    .cart-div h2 {
         color: #486284;
         font-size: 20px;
         font-family: 'DMSans bold';
-        }
+    }
 
 }

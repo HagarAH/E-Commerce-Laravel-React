@@ -10,9 +10,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-      <AuthProvider>
-          <RouterProvider router={router}/>
-      </AuthProvider>
-  </React.StrictMode>,
+    <React.StrictMode>
+        <AuthProvider>
+            <RouterProvider router={router}/>
+        </AuthProvider>
+    </React.StrictMode>,
 )

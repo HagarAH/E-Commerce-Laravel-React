@@ -1,9 +1,8 @@
-
-
 @font-face {
     font-family: 'DMSans';
     src: url('./assets/fonts/DMSans-Regular.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'DMSans bold';
     src: url('./assets/fonts/DMSans-Bold.ttf') format('truetype');

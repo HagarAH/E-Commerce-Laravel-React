@@ -25,6 +25,7 @@
     letter-spacing: 0.5px;
     color: #8CA2C0;
 }
+
 .order-item h2 {
     font-size: 28px;
     color: #486284;
@@ -60,12 +61,13 @@
 }
 
 @media screen and (max-width: 884px) {
-    .order-div{
+    .order-div {
         justify-content: center;
         align-items: center;
         padding: 64px 24px;
-        gap:48px;
+        gap: 48px;
     }
+
     .order-item {
         gap: 24px;
         padding: 0%;
@@ -90,7 +92,7 @@
         font-size: 16px;
     }
 
-    .order-div h1{
+    .order-div h1 {
         font-size: 32px;
         line-height: 40px;
     }
@@ -98,6 +100,6 @@
     .order-item img {
         width: 342px;
         order: 1;
-        height: 228px;/* Updated order value */
+        height: 228px; /* Updated order value */
     }
 }
