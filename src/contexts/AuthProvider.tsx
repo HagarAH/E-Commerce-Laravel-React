@@ -18,6 +18,7 @@ const StateContext = createContext<ContextType>({
     },
 })
 
+// @ts-ignore
 export const AuthProvider = ({children}) => {
     const [user, setUser] = useState<object | null>(null);
     const [token, _setToken] = useState<string | null>(localStorage.getItem(ACCESS_TOKEN));

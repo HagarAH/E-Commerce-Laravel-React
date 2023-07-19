@@ -4,9 +4,18 @@ import {faTrashCan} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Navigate} from "react-router-dom";
 import {useStateContext} from "../../contexts/AuthProvider";
-
+import getCartItems from "../../hooks/GetCartItems";
 export default function Cart() {
-    const {token} = useStateContext();
+    type Product = {
+        id: number;
+        name: string;
+        price: number;
+        description: string;
+        amount: number;
+    };
+
+    const { token } = useStateContext();
+    const products = getCartItems();
 
     if (!token) {
         return <Navigate to="/*"/>
@@ -20,43 +29,22 @@ export default function Cart() {
                 </div>
                 <div className='inner-div'>
                     <div className='orders-display'>
-                        <div className='order-item'>
-                            <img src={burgers}/>
-                            <div className='text-cart'>
-                                <h2> Burger 1</h2>
-                                <p className='p-cart'> Welcome to Burger Bliss, where we take your cravings to a whole
-                                    new level!
-                                    Our mouthwatering burgers are made from 100% beef and are served on freshly baked
-                                    buns.</p>
-                                <div className='amount-div'>
-                                    <span className=' p-2 '>Amount:</span> <input type="number" min="0" max="10"
-                                                                                  step="1" value="0"/> <FontAwesomeIcon
-                                    style={{
-                                        paddingLeft: '8px'
-                                    }} color={'red'} icon={faTrashCan}/>
+                        {products && products.map((product: Product) => (
+                            <div className='order-item'>
+                                <img src={burgers}/>
+                                <div className='text-cart'>
+                                    <h2> {product.name}</h2>
+                                    <p className='p-cart'> {product.description}</p>
+                                    <div className='amount-div'>
+                                        <span className=' p-2 '>Amount: {product.amount}</span>
+                                        <FontAwesomeIcon
+                                            style={{
+                                                paddingLeft: '8px'
+                                            }} color={'red'} icon={faTrashCan}/>
+                                    </div>
                                 </div>
-
                             </div>
-                        </div>
-
-                        <div className='order-item'>
-                            <img src={burgers}/>
-                            <div className='text-cart'>
-                                <h2> Burger 1</h2>
-                                <p className='p-cart'> Welcome to Burger Bliss, where we take your cravings to a whole
-                                    new level!
-                                    Our mouthwatering burgers are made from 100% beef and are served on freshly baked
-                                    buns.</p>
-                                <div className='amount-div'>
-                                    <span className=' p-2 '>Amount:</span> <input type="number" min="0" max="10"
-                                                                                  step="1" value="0"/> <FontAwesomeIcon
-                                    style={{
-                                        paddingLeft: '8px'
-                                    }} color={'red'} icon={faTrashCan}/>
-                                </div>
-
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -65,5 +53,4 @@ export default function Cart() {
             </div>
         </>
     )
-
 }
