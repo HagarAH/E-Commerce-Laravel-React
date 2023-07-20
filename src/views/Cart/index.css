@@ -61,6 +61,10 @@
     max-width: fit-content;
 }
 
+.order-item input{
+    width: 50px;
+}
+
 .order-deets {
     position: fixed;
     bottom: 0;
