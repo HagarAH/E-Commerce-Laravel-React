@@ -1,19 +1,20 @@
 .cart-div {
-    padding: 10px 112px;
+    padding: 10px 122px;
     display: flex;
     flex-direction: column;
     gap: 64px;
-    height: 80%;
+    height: 215px;
 }
 
 .amount-div {
-    font-family: 'DMSans bold';
+    font-family: 'DMSans bold', serif;
     color: #486284;
     letter-spacing: 0.5px;
     font-size: 17px;
 }
 
-.cart-div h1 {
+.h1-text {
+    padding: 2px 12px;
     color: #486284;
     font-size: 60px;
     line-height: 76px;
@@ -24,17 +25,21 @@
 .inner-div {
     display: flex;
     flex-direction: column;
-    gap: 64px;
+}
+.input-amount{
+    width: 43px;
+    padding-right: 2px;
+    margin-right: 5px;
 }
 
 .orders-display {
-    height: 80%;
+    height: 522px;
     overflow-y: auto;
     max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-bottom: 72px;
+    padding: 12px 122px;
 }
 
 .order-item {
@@ -47,6 +52,13 @@
     font-size: 20px;
     letter-spacing: 0.5px;
     color: #8CA2C0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 800px;
+}
+.order-item img{
+    max-width: fit-content;
 }
 
 .order-deets {
@@ -63,6 +75,7 @@
 .order-deets h2 {
     font-size: 24px;
     color: #486284;
+
 }
 
 @media screen and (max-width: 884px) {

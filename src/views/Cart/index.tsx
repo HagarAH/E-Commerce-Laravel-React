@@ -23,34 +23,38 @@ export default function Cart() {
 
     return (
         <>
-            <div className='cart-div'>
+            <div>
                 <div className='h1-text'>
                     <h1> My cart</h1>
                 </div>
-                <div className='inner-div'>
-                    <div className='orders-display'>
-                        {products && products.map((product: Product) => (
-                            <div className='order-item'>
-                                <img src={burgers}/>
-                                <div className='text-cart'>
-                                    <h2> {product.name}</h2>
-                                    <p className='p-cart'> {product.description}</p>
-                                    <div className='amount-div'>
-                                        <span className=' p-2 '>Amount: {product.amount}</span>
-                                        <FontAwesomeIcon
-                                            style={{
-                                                paddingLeft: '8px'
-                                            }} color={'red'} icon={faTrashCan}/>
+                    <div className='inner-div'>
+                        <div className='orders-display'>
+                            {products && products.map((product: Product) => (
+                                <div className='order-item'>
+                                    <img src={burgers}/>
+                                    <div className='text-cart'>
+                                        <h2> {product.name}</h2>
+                                        <p className='p-cart'> {product.description}</p>
+                                        <div className='amount-div'>
+                                            <span className=' p-2 '>Amount: <input type='number' value={product.amount} className='input-amount'/></span>
+                                            <FontAwesomeIcon
+                                                style={{
+                                                    paddingLeft: '8px'
+                                                }} color={'red'} icon={faTrashCan}/>
+                                            <br/>
+                                            <span className=' p-2 '> {product.price*product.amount} $</span>
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
+                <div className='order-deets'>
+                    <span>Order details</span>
                 </div>
             </div>
-            <div className='order-deets'>
-                <span>Order details</span>
-            </div>
+
         </>
     )
 }
