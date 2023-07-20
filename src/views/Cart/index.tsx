@@ -4,7 +4,9 @@ import {faTrashCan} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Navigate} from "react-router-dom";
 import {useStateContext} from "../../contexts/AuthProvider";
-import getCartItems from "../../hooks/GetCartItems";
+import getCartItems from "../../hooks/useGetCartItems";
+import useDeleteItemFromCart from "../../hooks/useDeleteItemFromCart";
+
 export default function Cart() {
     type Product = {
         id: number;
@@ -14,12 +16,19 @@ export default function Cart() {
         amount: number;
     };
 
-    const { token } = useStateContext();
-    const products = getCartItems();
-
+    const {token} = useStateContext();
+    const {products, setProducts} = getCartItems();
+    const {deleteCartItem} = useDeleteItemFromCart(products,setProducts);
     if (!token) {
         return <Navigate to="/*"/>
     }
+
+    const handleDeleteItem = (id: number) => {
+        deleteCartItem(id);
+    };
+    const changeHandler = (id: number) => {
+//handle update
+    };
 
     return (
         <>
@@ -27,29 +36,36 @@ export default function Cart() {
                 <div className='h1-text'>
                     <h1> My cart</h1>
                 </div>
-                    <div className='inner-div'>
-                        <div className='orders-display'>
-                            {products && products.map((product: Product) => (
-                                <div className='order-item'>
-                                    <img src={burgers}/>
-                                    <div className='text-cart'>
-                                        <h2> {product.name}</h2>
-                                        <p className='p-cart'> {product.description}</p>
-                                        <div className='amount-div'>
-                                            <span className=' p-2 '>Amount: <input type='number' value={product.amount} className='input-amount'/></span>
-                                            <FontAwesomeIcon
-                                                style={{
-                                                    paddingLeft: '8px'
-                                                }} color={'red'} icon={faTrashCan}/>
-                                            <br/>
-                                            <span className=' p-2 '> {product.price*product.amount} $</span>
+                <div className='inner-div'>
+                    <div className='orders-display'>
+                        {products && products.map((product: Product, index) => (
+                            <div key={index} className='order-item'>
+                                <img src={burgers}/>
+                                <div className='text-cart'>
+                                    <h2> {product.name}</h2>
+                                    <p className='p-cart'> {product.description}</p>
+                                    <div className='amount-div'>
+                                        <span className=' p-2 '>Amount: <input type='number' value={product.amount}
+                                                                               onChange={() => changeHandler(product.id)}
+                                                                               className='input-amount'/></span>
+                                        <FontAwesomeIcon
+                                            style={{
+                                                paddingLeft: '8px'
+                                            }}
+                                            color={'red'}
+                                            icon={faTrashCan}
+                                            onClick={() => handleDeleteItem(product.id)}
+                                        />
 
-                                        </div>
+                                        <br/>
+                                        <span className=' p-2 '> {product.price * product.amount} $</span>
+
                                     </div>
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
+                </div>
                 <div className='order-deets'>
                     <span>Order details</span>
                 </div>

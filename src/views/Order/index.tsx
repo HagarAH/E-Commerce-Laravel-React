@@ -5,7 +5,7 @@ import axiosClient from '../../axios-client';
 import {useStateContext} from '../../contexts/AuthProvider';
 import ReactModal from 'react-modal';
 import burger from '../../assets/images/burgerExp.png'
-import AddToCart from "../../hooks/AddToCart";
+import UseAddToCart from "../../hooks/useAddToCart";
 
 
 export default function Order() {
@@ -19,7 +19,7 @@ export default function Order() {
     const {token} = useStateContext();
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
-    const { cart, handleAddToCart } = AddToCart();
+    const { cart, handleAddToCart } = UseAddToCart();
     const handleAddToCartClick = (id:number) => {
         if (!token) {
             setShowModal(true);

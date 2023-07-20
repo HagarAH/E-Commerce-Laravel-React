@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import AddToCart from "./AddToCart";
+import UseAddToCart from "./useAddToCart";
 import axiosClient from "../axios-client";
 
-export default function GetCartItems() {
-    type Product = {
-        id: number;
-        name: string;
-        price: number;
-        description: string;
-        amount: number;
-    };
+export type  Product = {
+    id: number;
+    name: string;
+    price: number;
+    description: string;
+    amount: number;
+};
+export default function UseGetCartItems() {
 
-    const { cart } = AddToCart();
+
+    const { cart } = UseAddToCart();
     const [products, setProducts] = useState<Product[]>([]);
 
     useEffect(() => {
@@ -28,5 +29,5 @@ export default function GetCartItems() {
         fetchProducts();
     }, [cart]);
 
-    return products;
+    return {products,setProducts};
 }

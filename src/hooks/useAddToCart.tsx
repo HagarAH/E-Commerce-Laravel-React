@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import axiosClient from "../axios-client";
 
-type CartItem = {
+export type CartItem = {
     id: number;
     count: number;
 };
 
-export default function AddToCart() {
+export default function UseAddToCart() {
     const [cart, setCart] = useState<CartItem[]>([]);
 
     const handleAddToCart = (id: number) => {
@@ -26,7 +26,7 @@ export default function AddToCart() {
     useEffect(() => {
         const sendCartItems = async () => {
             try {
-                await axiosClient.post("/addItem", { cart });
+                await axiosClient.post("/addItems", { cart });
                 console.log("Cart items sent successfully!");
             } catch (error) {
                 console.error("Failed to send cart items:", error);
@@ -39,5 +39,5 @@ export default function AddToCart() {
     }, [cart]);
 
 
-    return { cart, handleAddToCart };
+    return { cart, handleAddToCart, setCart };
 }
