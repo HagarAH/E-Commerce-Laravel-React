@@ -10,7 +10,8 @@
     flex-direction: row;
     column-gap: 24px;
 }
-.modal-div{
+
+.modal-div {
     font-family: 'DMSans bold';
     font-size: 30px;
     display: flex;
@@ -36,6 +37,14 @@
     color: #8CA2C0;
 }
 
+.p-desc {
+    font-size: 20px;
+    white-space: normal;
+    word-wrap: break-word;
+    width: 500px;
+}
+
+
 .order-item h2 {
     font-size: 28px;
     color: #486284;
@@ -49,7 +58,7 @@
     color: #486284;
 }
 
-.order-item img {
+.img-order {
     width: 576px;
     height: 216px;
 }

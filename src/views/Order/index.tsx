@@ -58,7 +58,7 @@ export default function Order() {
                             <div className='text-item'>
                                 <h2>{product.name}</h2>
                                 <p>{product.price} $</p>
-                                <p>{product.description}</p>
+                                <p className='text-decoration-none p-desc'>{product.description}</p>
                                 <button
                                     className='text-decoration-none button-style'
                                     onClick={() => handleAddToCartClick(product.id)}
@@ -66,7 +66,7 @@ export default function Order() {
                                     Add to cart
                                 </button>
                             </div>
-                            <img src={burger} alt='Burger'/>
+                            <img className={'img-order'} src={burger} alt='Burger'/>
                         </div>
                     ))}
             </div>

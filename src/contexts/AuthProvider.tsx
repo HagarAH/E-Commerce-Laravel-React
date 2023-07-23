@@ -7,6 +7,7 @@ type ContextType = {
     token: string | null,
     setUser: (user: object | null) => void,
     setToken: (token: string | null) => void
+
 }
 
 const StateContext = createContext<ContextType>({

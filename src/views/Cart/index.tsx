@@ -39,8 +39,8 @@ export default function Cart() {
                 <div className='inner-div'>
                     <div className='orders-display'>
                         {products && products.map((product: Product, index) => (
-                            <div key={index} className='order-item'>
-                                <img src={burgers}/>
+                            <div key={index} className='cart-item'>
+                                <img className='img-cart' src={burgers}/>
                                 <div className='text-cart'>
                                     <h2> {product.name}</h2>
                                     <p className='p-cart'> {product.description}</p>

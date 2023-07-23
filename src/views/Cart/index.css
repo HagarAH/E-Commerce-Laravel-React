@@ -42,13 +42,13 @@
     padding: 12px 122px;
 }
 
-.order-item {
+.cart-item {
     display: flex;
     flex-direction: row;
     gap: 24px;
 }
 
-.order-item p {
+.cart-item p {
     font-size: 20px;
     letter-spacing: 0.5px;
     color: #8CA2C0;
@@ -57,12 +57,12 @@
     text-overflow: ellipsis;
     width: 800px;
 }
-.order-item img{
+.img-cart{
     max-width: fit-content;
 }
 
-.order-item input{
-    width: 50px;
+.cart-item input{
+    width: 40px;
 }
 
 .order-deets {
@@ -88,17 +88,17 @@
         gap: 24px;
     }
 
-    .order-item p {
+    .cart-item p {
         font-size: 16px;
         letter-spacing: 0.5px;
         color: #8CA2C0;
     }
 
-    .order-item img {
+    .cart-item img {
         width: 300px;
     }
 
-    .order-item {
+    .cart-item {
         display: flex;
         flex-direction: column;
         order: 0;
