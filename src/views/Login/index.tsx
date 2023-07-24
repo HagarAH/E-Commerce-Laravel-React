@@ -6,13 +6,15 @@ import 'animate.css';
 import axiosClient from '../../axios-client';
 import {useStateContext} from "../../contexts/AuthProvider.tsx";
 import {useState} from "react";
+import {usePaymentStateContext} from "../../contexts/PaymentProvider";
 
 
 export default function Login() {
     const [err, setError] = useState('');
-    const {user, setUser, token, setToken} = useStateContext();
+    const { setUser, setToken} = useStateContext();
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const {  setOAuthCode,oauthCode, setOAuthToken}= usePaymentStateContext()
 
     const onSubmit = (ev) => {
         ev.preventDefault();
@@ -27,24 +29,19 @@ export default function Login() {
         };
         console.log(payload);
         axiosClient.post('/login', payload).then(({data}) => {
-
             setUser(data.user);
             setToken(data.token);
-            console.log(data.token);
+            setOAuthCode(data.request);
+            console.log(data);
 
-        })
-            .catch(error => {
-                if (error.response && error.response.status === 422) {
-                    setError(error.response.data.message);
-                    console.log(error)
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
-                    // Something happened in setting up the request that triggered an Error
-                    console.log('Error', error.message);
-                }
-
-            });
+            axiosClient.post('/getToken', { code: oauthCode })
+                .then(({data}) => {
+                    setOAuthToken(data.token);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        });
         setError('');
     };
 
