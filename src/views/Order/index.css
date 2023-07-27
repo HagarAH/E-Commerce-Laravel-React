@@ -119,6 +119,6 @@
     .order-item img {
         width: 342px;
         order: 1;
-        height: 228px; /* Updated order value */
+        height: 228px;
     }
 }
